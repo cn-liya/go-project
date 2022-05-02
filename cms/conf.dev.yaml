@@ -1,0 +1,48 @@
+app:
+  env: "development" #development|testing|production
+  logger:
+    topic: "go-cms"
+    output: "file" #file|std|fmt
+    cipherkey: "vgPJEhigMstRETQs" #16/24/32字符
+    cipherfields: #支持忽略大小写模糊匹配
+      - secret
+      - phone
+      - password
+handler:
+  cos: #腾讯云对象存储
+    bucketurl: "https://BUCKET_NAME-APPID.cos.COS_REGION.myqcloud.com"
+    serviceurl: "https://cos.COS_REGION.myqcloud.com"
+    secretid: "xxxxxxSecretIDxxxxxx"
+    secretkey: "xxxxxxSecretKeyxxxxxx"
+#  oss: #阿里云对象存储
+#    endpoint: "oss-cn-REGION.aliyuncs.com"
+#    keyid: "xxxxxxKeyIDxxxxxx"
+#    keysecret: "xxxxxKeySecretxxxxxx"
+#    bucketname: "xxxxxxooooooxxxxxx"
+  cdn: "https://cdn.domain.cn"
+  captcha: "Du2_uEXoxAXLopLjAFYf" #任意字符串
+  aes:
+    key: "a0EYDkdjIvn4N92U"
+    iv: "Te76o8pw0h9wRW1e"
+service:
+  mysql:
+    address: "host.docker.internal:3306"
+    username: "root"
+    password: "root.pwd"
+    database: "go_project"
+    maxopen: 50
+    maxidle: 1
+    tracelog: true
+  redis:
+    address: "host.docker.internal:6379"
+    username: "" #redis6.0以上使用
+    password: ""
+    db: 0
+    poolsize: 50
+    minidle: 1
+    maxidle: 10
+#    cert: |
+#    key: |
+#    ca: |
+  nsq:
+    producer: "host.docker.internal:4150"

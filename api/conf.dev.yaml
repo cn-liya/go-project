@@ -1,0 +1,42 @@
+app:
+  env: "development" #development|testing|production
+  logger:
+    topic: "go-api"
+    output: "file" #file|std|fmt
+    cipherkey: "vgPJEhigMstRETQs" #16/24/32字符
+    cipherfields: #支持忽略大小写模糊匹配
+      - secret
+      - phone
+      - password
+handler:
+  ips: #内测环境IP白名单
+    - 127.0.0.1
+  cdn: "https://cdn.domain.cn"
+  wechat: #微信小程序
+    appid: "wx1c0dxxxxxx45dec0"
+    secret: "5975a95xxxxxxxxxxxxxxxxx0e67c15"
+  aes:
+    key: "a0EYDkdjIvn4N92U"
+    iv: "Te76o8pw0h9wRW1e"
+service:
+  mysql:
+    address: "host.docker.internal:3306"
+    username: "root"
+    password: "root.pwd"
+    database: "go_project"
+    maxopen: 50
+    maxidle: 5
+    tracelog: true
+  redis:
+    address: "host.docker.internal:6379"
+    username: "" #redis6.0以上使用
+    password: ""
+    db: 0
+    poolsize: 50
+    minidle: 5
+    maxidle: 20
+#    cert: |
+#    key: |
+#    ca: |
+  nsq:
+    producer: "host.docker.internal:4150"

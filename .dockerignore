@@ -1,0 +1,11 @@
+design
+README.md
+.*ignore
+.idea
+*.DS_Store
+vendor
+*/log/*
+!*/log/.gitkeep
+api/api*
+cms/cms*
+script/script*

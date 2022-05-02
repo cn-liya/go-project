@@ -1,0 +1,10 @@
+.idea
+.vscode
+.DS_Store
+vendor
+*/log/*
+!*/log/.gitkeep
+*/conf.yaml
+api/api*
+cms/cms*
+script/script*
