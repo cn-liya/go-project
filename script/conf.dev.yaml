@@ -1,0 +1,55 @@
+app:
+  env: "development" # development|testing|production
+  logger:
+    topic: "go-script"
+    output: "fmt" # file|std|fmt
+    cipherkey: "vgPJEhigMstRETQs" # 16/24/32 characters
+    cipherfields: # ignore case, fuzzy matching
+      - secret
+      - phone
+      - password
+handler:
+  cos: # Tencent Cloud Object Storage
+    bucketurl: "https://BUCKET_NAME-APPID.cos.REGION.myqcloud.com"
+    serviceurl: "https://cos.REGION.myqcloud.com"
+    secretid: "xxxxxxSecretIDxxxxxx"
+    secretkey: "xxxxxxSecretKeyxxxxxx"
+#  oss: # Aliyun Object Storage Service
+#    endpoint: "https://oss-REGION.aliyuncs.com"
+#    keyid: "xxxxxxKeyIDxxxxxx"
+#    keysecret: "xxxxxKeySecretxxxxxx"
+#    bucketname: "xxxxxBucketNamexxxxx"
+  cdn: "https://cdn.domain.cn"
+  wechat:
+    appid: "wx1c0dxxxxxx45dec0"
+    secret: "5975a95xxxxxxxxxxxxxxxxx0e67c15"
+  robot:
+    dingtalk: "https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxxxxxxxxx"
+    wechatwork: "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxxxxxxxxxx"
+service:
+  mysql:
+    address: "host.docker.internal:3306"
+    username: "root"
+    password: "root.pwd"
+    database: "go_project"
+    maxopen: 50
+    maxidle: 1
+    tracelog: true
+  redis:
+    address: "host.docker.internal:6379"
+    username: "" # for redis v6.0+
+    password: ""
+    db: 0
+    poolsize: 50
+    minidle: 0
+    maxidle: 5
+#    cert: |
+#    key: |
+#    ca: |
+  nsq:
+    producer: "host.docker.internal:4150"
+    consumer: "host.docker.internal:4161"
+#  rabbitmq:
+#    address: "host.docker.internal:5672"
+#    username: "guest"
+#    password: "guest"

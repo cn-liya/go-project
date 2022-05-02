@@ -1,0 +1,13 @@
+design
+README.md
+.*ignore
+.idea
+.vscode
+*.DS_Store
+*local*
+vendor
+*/log/*
+!*/log/.gitkeep
+api/api*
+cms/cms*
+script/script*
