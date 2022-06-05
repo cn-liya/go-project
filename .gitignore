@@ -1,0 +1,7 @@
+.idea
+*.DS_Store
+/vendor/
+/*/docs/log/*.log
+/api/api*
+/cms/cms*
+/script/script*

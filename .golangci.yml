@@ -1,0 +1,3 @@
+linters: # 使用默认
+  disable: # ci-lint v1.46.2 不支持 go 1.18 的检查
+    - structcheck
